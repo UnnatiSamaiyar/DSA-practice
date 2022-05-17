@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int s,t,a,b,m,n,apple,orange,apple_count=0,orange_count=0;
+    cin>>s>>t>>a>>b>>m>>n;
+    
+    for(int i=0; i<m; i++){
+        cin>>apple;
+        if(a+apple>=s && a+apple<=t){
+            apple_count++;
+        }
+    }
+    for(int i=0; i<n; i++){
+        cin>>orange;
+        if(b+orange>=s && b+orange<=t){
+            orange_count++;
+        }
+    }
+    cout<<apple_count<<endl;
+    cout<<orange_count<<endl;
+    return 0;
+}
