@@ -10,7 +10,7 @@ int main(){
         socks[c]++;
     }
     int a = 0;
-    for(int i = 0; i<=99; i++){
+    for(int i = 0; i<=100; i++){
         a += socks[i]/2;
     }
     cout<<a<<endl;
