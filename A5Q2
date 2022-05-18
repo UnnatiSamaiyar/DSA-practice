@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int minSteps(int n) {
+        if(n==1) return 0;
+        int min_step = 1000;
+        for(int m =1; 2*m<=n; m++){
+            int step = minSteps(n-m,m);
+            if(step < min_step){
+                min_step = step;
+            }
+        }
+        return min_step + 1;
+    }
+    int minSteps(int n, int m){
+        if(n<m){
+            return 1000;
+        }
+        else if(n>m){
+            return minSteps(n-m,m) + 1;
+        }
+        else{
+            return minSteps(n) + 1;
+        }
+    }
+};
