@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int n, arr[10];
+int main(){
+    cin>>n;
+    for(int i = 1; i<=n; i++){
+        int x;
+        cin>>x;
+        arr[x]++;
+    }
+    int ans = 1;
+    for(int i = 2; i<=5; i++){
+        if(arr[i]>arr[ans]){
+            ans=i;
+        }
+    }
+    cout<<ans;
+}
