@@ -1,14 +1,15 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
-
 int main(){
     int a;
     long long int b;
     char c;
     float d;
     double e;
-    
-    scanf("%d\n%lld\n%c\n%f\n%lf\n",&a,&b,&c,&d,&e);
-    printf("%d\n%lld\n%c\n%f\n%lf\n",a,b,c,d,e);
-    
+    cin>>a>>b>>c>>d>>e;
+    cout<<a<<endl;
+    cout<<b<<endl;
+    cout<<c<<endl;
+    cout<<d<<endl;
+    cout<<e<<endl;
 }
