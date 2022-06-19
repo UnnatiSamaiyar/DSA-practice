@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//function to swap two elements
+void swap(int *a, int *b){
+    int temp= *a;
+    *a = *b;
+    *b = temp;
+}
+
+//function to print an array, n is the size of array
+void printArray(int arr[], int n){
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
+//function two sort the array using selection sort
+void selectionSort(int arr[], int n){
+    for(int i=0; i<n-1; i++){
+        int min_val=i;
+        //finding minimum element from arr[i] to arr[n-1]
+        for(int j= i+1; j<n; j++){
+            if(arr[j]<arr[min_val]){
+                min_val=j;
+            }
+        }
+    int key=arr[min_val];
+        while(min_val>i){
+            arr[min_val]=arr[min_val-1];
+            min_val--;
+        }
+        arr[i]=key;
+    }
+}
+int main(){
+    int arr[]={20,10,12,15,2};
+    int n= sizeof(arr)/sizeof(arr[0]);
+    selectionSort(arr,n);
+    printArray(arr,n);
+}
