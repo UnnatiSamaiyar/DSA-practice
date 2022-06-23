@@ -22,7 +22,7 @@ int main(){
 	int target;
 	cin>>target;
 	
-	isTargetPresent(A,n,target);
+	cout<<isTargetPresent(A,n,target);
 	return 0;
 
 }
