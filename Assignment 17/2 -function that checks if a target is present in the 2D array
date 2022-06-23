@@ -16,5 +16,5 @@ int main(){
     vector<vector<int> >A = {{2,8,9},
                             {3,4,5}};
     int target = 8;
-    isTargetPresentIn2Dvector(A, target);
+    cout<<isTargetPresentIn2Dvector(A, target);
 }
