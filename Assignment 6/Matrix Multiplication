@@ -1,64 +1,63 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
- 
-int main()
-{
-	int r, c, i, j;
-    int m1[10][10], m2[10][10], mul[10][10];
- 
-    cout<<"\n\nEnter the number of Rows and Columns of matrix : ";
-    cin>>r>>c;
-    cout << "\nEnter the "<<r*c<<" elements of matrix 1 : \n";
- 
-    for (i=0; i<r; i++) {
-        for (j=0; j<c; j++) {
-            cin>>m1[i][j];
-        }
-    }
- 
-    cout << "\nEnter the "<<r*c<<" elements of matrix 2 : \n";
- 
-    for (i=0; i<r; i++) {
-        for (j=0; j<c; j++) {
-            cin>>m2[i][j];
-        }
-    }
- 
-    for (i=0; i<r; i++) {
-        for (j=0; j<c; j++) {
-            mul[i][j] = m1[i][j] * m2[i][j];
-        }
-    }
- 
-    cout << "\n\nMatrix 1 is : \n";
- 
-    for (i=0; i<r; i++) {
-        for (j=0; j<c; j++) {
-            cout << m1[i][j] << "  ";
-        }
-        cout<<"\n";
-    }
- 
-    cout << "\n\nMatrix 2 is : \n";
- 
-    for (i=0; i<r; i++) {
-        for (j=0; j<c; j++) {
-            cout << m2[i][j] << "  ";
-        }
-        cout<<"\n";
-    }
- 
-    cout << "\n\nMultiplication of matrix 1 & 2 is : \n";
- 
-    for (i=0; i<r; i++) {
-        for (j=0; j<c; j++) {
-            cout<<mul[i][j] << "  ";
-        }
- 
-        cout<<"\n";
-    }
- 
-    cout << "\n\n";
- 
-    return 0;
+
+int main(){
+	
+	//size of first matrix
+	int n,m;
+	cin>>n>>m;
+	cout<<"Size of matrix: Row "<<n<<"Column "<<m<<endl;
+	
+	//declaration of first and second matrix
+	int m1[n][m];
+	int m2[n][m];
+	
+	//declaration of resultant matrix
+	int r1[n][m];
+	
+	//input elements of first matrix(m1)
+	for(int i=0; i<n; i++){
+		for(int j=0; j<m; j++){
+			cin>>m1[i][j];
+		}
+	}
+	//displaying elements of first matrix(m1)
+	cout<<"Matrix 1"<<endl;
+	for(int i=0; i<n; i++){
+		for(int j=0; j<m; j++){
+			cout<<m1[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	
+	//input elements of second matrix(m2)
+	for(int i=0; i<n; i++){
+		for(int j=0; j<m; j++){
+			cin>>m2[i][j];
+		}
+	}
+	//displaying elements of second matrix(m2)
+	cout<<"Matrix 2"<<endl;
+	for(int i=0; i<n; i++){
+		for(int j=0; j<m; j++){
+			cout<<m2[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	//multiplying the matrix
+	cout<<"Resulatant matrix"<<endl;
+	for(int i=0; i<n; i++){
+		for(int j=0; j<m; j++){
+			r1[i][j]=0;
+			for(int k=0; k<m; k++){
+				r1[i][j]+=m1[i][k]*m2[k][j];
+			}
+		}
+	}
+	for(int i=0; i<n; i++){
+		for(int j=0; j<n; j++){
+			cout<<r1[i][j]<<" ";
+		}
+		cout<<endl;
+	}
 }
