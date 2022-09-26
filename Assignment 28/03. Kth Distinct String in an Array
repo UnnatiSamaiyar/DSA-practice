@@ -1,0 +1,21 @@
+class Solution {
+public:
+    string kthDistinct(vector<string>& arr, int k) {
+        int count=0;
+        for(int i=0; i<arr.size(); i++){
+            int j;
+            for(j=0; j<arr.size(); j++){
+                if(i!=j && arr[j]==arr[i]){
+                    break;
+                }
+            }
+            if(j==arr.size()){
+                    count++;
+            }
+            if(count==k){
+                    return arr[i];
+            }
+        }
+        return "";
+    }
+};
