@@ -1,0 +1,25 @@
+class Solution {
+public:
+    vector<string> ans;
+    void CasePermute(string s, int n, int index){
+        if(index==n){
+            ans.push_back(s);
+            return;
+        }
+        if(isdigit(s[index])){
+            CasePermute(s,n,index+1);
+            return;
+        }
+        s[index]=tolower(s[index]);
+        CasePermute(s,n,index+1);
+        
+        s[index]=toupper(s[index]);
+        CasePermute(s,n,index+1);
+    }
+    
+    vector<string> letterCasePermutation(string s) {
+        
+        CasePermute(s,s.length(),0);
+        return ans;
+    }
+};
