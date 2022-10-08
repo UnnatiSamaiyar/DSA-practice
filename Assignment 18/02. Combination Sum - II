@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<vector<int>> ans;
+    void combination(vector<int>A,vector<int>curr,int sum,int index,int target){
+        if(sum==target){
+            ans.push_back(curr);
+            return;
+        }
+        if(sum>target){
+            return;
+        }
+        for(int i=index;i<A.size();i++){
+            if(i>index && A[i]==A[i-1]){
+                continue;
+            }
+            curr.push_back(A[i]);
+            combination(A,curr,sum+A[i],i+1,target);
+            curr.pop_back();
+        }
+    }
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        vector<int>curr;
+        sort(candidates.begin(),candidates.end());
+        combination(candidates,curr,0,0,target);
+        return ans;
+    }
+};
