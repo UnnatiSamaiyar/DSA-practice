@@ -1,0 +1,29 @@
+class Solution {
+public:
+    void unique(vector<vector<int>> &ans, vector<int> &subset, vector<int> &nums, int target){
+        int start = 0;
+        if(subset.size() == target){
+            ans.push_back(subset);
+        }
+        else{
+            
+            if(subset.size() > 0){
+                start = find(nums.begin(), nums.end(), subset[subset.size()-1]) - nums.begin() + 1;
+            }
+        }
+        for(int i = start; i < nums.size(); i++){
+            int e = nums[i];
+            subset.push_back(e);
+            unique(ans, subset, nums, target);
+            subset.pop_back();
+        }
+    }
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> ans;
+        vector<int> subset;
+        for(int i = 0; i<= nums.size(); i++){
+            unique(ans, subset, nums, i);
+        }
+        return ans;
+    }
+};
